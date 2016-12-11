@@ -17,8 +17,8 @@ public extension UIImageView {
             return HanekeGlobals.UIKit.formatWithSize(viewSize, scaleMode: scaleMode)
     }
     
-    public func hnk_setImageFromURL(URL: NSURL, placeholder : UIImage? = nil, format : Format<UIImage>? = nil, failure fail : ((NSError?) -> ())? = nil, success succeed : ((UIImage) -> ())? = nil) {
-        let fetcher = NetworkFetcher<UIImage>(URL: URL)
+    public func hnk_setImageFromURL(URL: NSURL, key: String? = nil, placeholder : UIImage? = nil, format : Format<UIImage>? = nil, failure fail : ((NSError?) -> ())? = nil, success succeed : ((UIImage) -> ())? = nil) {
+        let fetcher = NetworkFetcher<UIImage>(URL: URL, key: key)
         self.hnk_setImageFromFetcher(fetcher, placeholder: placeholder, format: format, failure: fail, success: succeed)
     }
     
